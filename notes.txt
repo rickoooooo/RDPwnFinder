@@ -1,0 +1,17 @@
+Steps:
+
+1. Take RDP screenshots
+	a. Grab list from Shodan
+	b. Scan list to ensure 3389 is still open. Use RDP nmap script to check for native RDP encryption support (CredSSP doesn't allow screenshotting)
+
+2. Reformat images so they contain the least amount of data but are still recognizable. Grayscale? Resize to very small?
+3. Classify a training set manually (Blank, Secure, Hacked)
+	for file in $(ls -f *.jpg); do python ../../../image_reformatter.py $file ; done
+
+
+Classifiers:
+- I started out with SVC. Didn't seem to work all that well. Tried varying the gamma and C values with varying results. Was never all that accurate though.
+- Then I moved to AdaBoostClassifier and this seemed to work better out of the gate. Though it still wasn't accurate enough. Then I changed my classification strategy so instead of having hacked, login, blank, and stickykeys, i just had hacked and clean. This seemed to give much better results. The classifier test came back with 99% accuracy and my own test showed that it got 3/4 of the hacked images from my test set. Better than before.
+
+Bugs:
+- When I set the screenshot script to connect to multiple machines simultaneously, it seems to mess something up with activating stickykeys. Most of the screenshots end up just basic login pages without the stickykeys activated.
