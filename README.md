@@ -18,14 +18,15 @@ This repository comes with a single AdaBoostClassifier training model. It has be
 
 ## Usage
 Basic usage to test an RDP server is:
-cd images
-python ../scripts/RDPwnFinder.py -n ../models/ADABoostClassifier.mdl -g gray -c color -p hacked <IP>
+* cd images
+* python ../scripts/RDPwnFinder.py -n ../models/ADABoostClassifier.mdl -g gray -c color -p hacked <IP>
 
 If you want to test many IPs, you can do it with Bash
 for host in $(cat ip_list.txt); do python ../scripts/RDPwnFinder.py -n ../models/ADABoostClassifier.mdl -g gray -c color -p hacked $host; done
 
 ## Other Info
-No training images are provided with this repo to protect the privacy of others.
+* No training images are provided with this repo to protect the privacy of others.
+* Sticky Keys backdoors only work on systems that do not require Network Level Authentication (NLA). The nmap-rdp-scanner.sh script attempts to help you filter those out of your target list.
 
 ## Bugs
 There are some unhandled exceptions in either these scripts or in the RDP Screen Capture libraries used. Sometimes it will break and you have to manually kill the python process.
