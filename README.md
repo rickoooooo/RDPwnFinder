@@ -5,13 +5,13 @@ Uses Python and machine learning to identify RDP servers with a Sticky Keys back
 
 ## Scripts
 The scripts directory contains various scripts to help collect images, train models, classify images, etc.
-* RDPwnFinder.py - Connects to an IP, screenshots, and classifies the image based on a provided training model.
-* nmap-rdp-scanner.sh - Helper script to scan an input list of IPs and output a list of IPs with RDP supporting RDP encryption.
-* create_training_model.py - Provide pre-classified images and output a training model for later use
-* RDP_image_reformatter.py - Reformat previously captured RDP screenshots for use with create_training_model.py.
-* image_sort_helper.py - Helps you manually sort captured images into "clean" and "hacked" for training.
-* test_against_training_model.py - Tests a single image against a provided training model.
-* test_and_sort_against_training_model.py - Test a single image against a provided training model and sort it into a directory.
+* **RDPwnFinder.py** - Connects to an IP, screenshots, and classifies the image based on a provided training model.
+* **nmap-rdp-scanner.sh** - Helper script to scan an input list of IPs and output a list of IPs with RDP supporting RDP encryption.
+* **create_training_model.py** - Provide pre-classified images and output a training model for later use
+* **RDP_image_reformatter.py** - Reformat previously captured RDP screenshots for use with create_training_model.py.
+* **image_sort_helper.py** - Helps you manually sort captured images into "clean" and "hacked" for training.
+* **test_against_training_model.py** - Tests a single image against a provided training model.
+* **test_and_sort_against_training_model.py** - Test a single image against a provided training model and sort it into a directory.
 
 ## Models
 This repository comes with a single AdaBoostClassifier training model. It has been trained with several thousand images and seems to work very well.
