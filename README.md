@@ -18,8 +18,10 @@ This repository comes with a single AdaBoostClassifier training model. It has be
 
 ## Usage
 Basic usage to test an RDP server is:
+```
     cd images
     python ../scripts/RDPwnFinder.py -n ../models/ADABoostClassifier.mdl -g gray -c color -p hacked <IP>
+```
 
 If you want to test many IPs, you can do it with Bash
 for host in $(cat ip_list.txt); do python ../scripts/RDPwnFinder.py -n ../models/ADABoostClassifier.mdl -g gray -c color -p hacked $host; done
