@@ -1,0 +1,1 @@
+Run the RDPwnFinder.py script from inside this directory. It saves full size colored images in the color directory, and scaled grayscale images (in case you want to use them for training later) in the gray directory.
