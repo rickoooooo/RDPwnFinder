@@ -23,8 +23,10 @@ Basic usage to test an RDP server is:
     python ../scripts/RDPwnFinder.py -n ../models/ADABoostClassifier.mdl -g gray -c color -p hacked <IP>
 ```
 
-If you want to test many IPs, you can do it with Bash
+If you want to test many IPs, you can do it with Bash:
+```
 for host in $(cat ip_list.txt); do python ../scripts/RDPwnFinder.py -n ../models/ADABoostClassifier.mdl -g gray -c color -p hacked $host; done
+```
 
 ## Other Info
 * No training images are provided with this repo to protect the privacy of others.
