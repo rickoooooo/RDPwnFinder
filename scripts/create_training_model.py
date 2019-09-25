@@ -24,12 +24,13 @@ path="./"
 Xlist=[]
 Ylist=[]
 for directory in os.listdir(path):
-    for file in os.listdir(path+directory):
-        #print(path+directory+"/"+file)
-        img=Image.open(path+directory+"/"+file)
-        featurevector=numpy.array(img).flatten()
-        Xlist.append(featurevector)
-        Ylist.append(directory)
+    if os.path.isdir(path + directory):
+        for f in os.listdir(path+directory):
+            #print(path+directory+"/"+file)
+            img=Image.open(path+directory+"/"+f)
+            featurevector=numpy.array(img).flatten()
+            Xlist.append(featurevector)
+            Ylist.append(directory)
 
 # Shuffle lists so they aren't in any particular order
 Zlist = list(zip(Xlist, Ylist))
