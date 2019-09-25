@@ -1,5 +1,5 @@
 # RDPwnFinder
-Uses Python and machine learning to identify RDP servers with a Sticky Keys backdoor.
+Uses Python and machine learning to identify RDP servers with a Sticky Keys backdoor. Repo is in beta so there are bugs and idiosyncrasies.
 
 ![Example Screenshot](/ExampleScreenshot.png)
 
